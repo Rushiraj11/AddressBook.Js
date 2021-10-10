@@ -134,7 +134,7 @@ function addContact(contact){
 function contactPresent(firstName) {
     return addressBook.some(contact => contact.firstName == firstName);// checking if contact present or not using some method(boolean)
 }
-console.log(addressBook);
+//console.log(addressBook);
 
 function editContactInformation(firstName,choice,newValue) { // Editing the contact by using first name as refrence
     if (contactPresent(firstName)) {
@@ -174,7 +174,7 @@ function editContactInformation(firstName,choice,newValue) { // Editing the cont
 
 editContactInformation("Rahul",8,"tony@gmail.com");// calling method to edit contact
 editContactInformation(4,"Aditya",2,"Kolhapur");
-console.log(addressBook);
+//console.log(addressBook);
 
 function deleteContact(firstName){
     if(contactPresent(firstName))
@@ -183,3 +183,10 @@ function deleteContact(firstName){
 
 deleteContact("Rahul");
 console.log(addressBook);
+
+
+function getCount(){
+    let count = addressBook.reduce((total) => total+=1,0); 
+    console.log(count);
+}
+getCount();
