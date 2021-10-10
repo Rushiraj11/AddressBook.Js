@@ -64,7 +64,7 @@ class Contact{
         return this._state;
      }
     set state(state) {
-        let stateRegex = RegExp('^[a-zA-Z]{4,}$');
+        let stateRegex = RegExp('^[a-zA-Z]{3,}$');
         if (stateRegex.test(state)) {
             this._state = state;
         }
@@ -118,9 +118,20 @@ class Contact{
     }
 
 }
-try{
-let contact = new Contact("Rushiraj","Ghatge","Pimpri","Pune","Maharashtra","411019","8178987656","rjgop@gmail.com"); // handling Exception using try catch
-console.log(contact.toString());
-}catch(e){
-    console.error(e);
+
+let contact1 = new Contact("Rushiraj","Ghatge","Pimpri","Pune","Maharashtra","411019","8178987656","rjgop@gmail.com"); 
+let contact2 = new Contact("Aditya","Deshmukh","Dhankawadi","Pune","Maharashtra","411043","7364586372","mark@gmail.com");
+let contact3 = new Contact("Rahul","Gaikwad","Baga","SouthGoa","Goa","311043","8956236372","Rgk12@gmail.com");
+let addressBook=new Array();
+addContact(contact1);
+addContact(contact2);
+addContact(contact3);
+
+function addContact(contact){
+    if (!contactPresent(contact.firstName)) // if given input first name is not present it will push to addressbook
+        addressBook.push(contact)
 }
+function contactPresent(firstName) {
+    return addressBook.some(contact => contact.firstName == firstName);// checking if contact present or not using some method(boolean)
+}
+console.log(addressBook);
