@@ -190,3 +190,13 @@ function getCount(){
     console.log(count);
 }
 getCount();
+let contact4 = new Contact('Rushiraj', 'Laaa', 'OSosoo', 'Pune', 'Gao', '411091', '8189956633', 'swaraj@gmail.com')
+function duplicateCheck(firstName){
+    if(!addressBook.some(contact => contact._firstName != firstName))
+    addressBook.push(contact4);
+else
+  console.log("Contact already Exists!");
+
+}
+duplicateCheck("Rushiraj");
+console.log(addressBook);
