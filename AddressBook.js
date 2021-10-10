@@ -134,12 +134,12 @@ function addContact(contact){
 function contactPresent(firstName) {
     return addressBook.some(contact => contact.firstName == firstName);// checking if contact present or not using some method(boolean)
 }
-//console.log(addressBook);
+console.log(addressBook);
 
-function editContactInformation(choice,firstName,newValue) { // Editing the contact by using first name as refrence
+function editContactInformation(firstName,choice,newValue) { // Editing the contact by using first name as refrence
     if (contactPresent(firstName)) {
         switch (choice) {
-            case 1: addressBook.find((contact) => contact.firstName == firstName).firstName = newValue;
+            case 1: addressBook.find((contact) => contact.firstName == firstName).firstName = newValue; //find method to check if contact present in addressbook
                 break;
             case 2:
                 addressBook.find((contact) => contact.firstName == firstName).lastName = newValue;
@@ -169,9 +169,17 @@ function editContactInformation(choice,firstName,newValue) { // Editing the cont
     else {
         console.log("contact not present");
     }
+    
 }
 
-editContactInformation(8,"Rahul","tony@gmail.com");// calling method to edit contact
-editContactInformation(4,"Aditya","Kolhapur");
+editContactInformation("Rahul",8,"tony@gmail.com");// calling method to edit contact
+editContactInformation(4,"Aditya",2,"Kolhapur");
+console.log(addressBook);
 
+function deleteContact(firstName){
+    if(contactPresent(firstName))
+    addressBook=addressBook.filter(contact=>contact.firstName != firstName);// using filter method to delete valid input contact 
+}
+
+deleteContact("Rahul");
 console.log(addressBook);
