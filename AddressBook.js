@@ -134,4 +134,44 @@ function addContact(contact){
 function contactPresent(firstName) {
     return addressBook.some(contact => contact.firstName == firstName);// checking if contact present or not using some method(boolean)
 }
+//console.log(addressBook);
+
+function editContactInformation(choice,firstName,newValue) { // Editing the contact by using first name as refrence
+    if (contactPresent(firstName)) {
+        switch (choice) {
+            case 1: addressBook.find((contact) => contact.firstName == firstName).firstName = newValue;
+                break;
+            case 2:
+                addressBook.find((contact) => contact.firstName == firstName).lastName = newValue;
+                break;
+            case 3:
+                addressBook.find((contact) => contact.firstName == firstName).address = newValue;
+                break;
+            case 4:
+                addressBook.find((contact) => contact.firstName == firstName).city = newValue;
+                break;
+            case 5:
+                addressBook.find((contact) => contact.firstName == firstName).state = newValue;
+                break;
+            case 6:
+                addressBook.find((contact) => contact.firstName == firstName).zip = newValue;
+                break;
+            case 7:
+                addressBook.find((contact) => contact.firstName == firstName).phoneNumber = newValue;
+                break;
+            case 8:
+                addressBook.find((contact) => contact.firstName == firstName).email = newValue;
+                break;
+            default:
+                console.log("Invalid index");
+        }
+    }
+    else {
+        console.log("contact not present");
+    }
+}
+
+editContactInformation(8,"Rahul","tony@gmail.com");// calling method to edit contact
+editContactInformation(4,"Aditya","Kolhapur");
+
 console.log(addressBook);
