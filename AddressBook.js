@@ -120,7 +120,7 @@ class Contact{
 }
 
 let contact1 = new Contact("Rushiraj","Ghatge","Pimpri","Pune","Maharashtra","411019","8178987656","rjgop@gmail.com"); 
-let contact2 = new Contact("Aditya","Deshmukh","Dhankawadi","Pune","Maharashtra","411043","7364586372","mark@gmail.com");
+let contact2 = new Contact("Aditya","Deshmukh","Dhankawadi","Nashik","Maharashtra","411043","7364586372","mark@gmail.com");
 let contact3 = new Contact("Rahul","Gaikwad","Baga","SouthGoa","Goa","311043","8956236372","Rgk12@gmail.com");
 let addressBook=new Array();
 addContact(contact1);
@@ -190,7 +190,8 @@ function getCount(){
     console.log(count);
 }
 getCount();
-let contact4 = new Contact('Rushiraj', 'Laaa', 'OSosoo', 'Pune', 'Gao', '411091', '8189956633', 'swaraj@gmail.com')
+
+let contact4 = new Contact('Rushiraj', 'Laaa', 'OSosoo', 'Pune', 'Gao', '411091', '8189956633', 'swaraj@gmail.com')//Uc7
 function duplicateCheck(firstName){
     if(!addressBook.some(contact => contact._firstName != firstName))
     addressBook.push(contact4);
@@ -200,3 +201,9 @@ else
 }
 duplicateCheck("Rushiraj");
 console.log(addressBook);
+
+function searchPersonAcrossState(city) {                      //Uc8
+    console.log(addressBook.filter(contact=>contact.city==city));
+ }
+
+ searchPersonAcrossState("Pune");
