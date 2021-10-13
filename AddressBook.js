@@ -208,4 +208,8 @@ function searchPersonAcrossState(city) {                      //Uc8
 
  searchPersonAcrossState("Pune");
 
+ function viewPersonByCity(city){                              //UC9
+    console.log(addressBook.filter(contact=>contact.city==city));
+}
+viewPersonByCity("Nashik");
  
