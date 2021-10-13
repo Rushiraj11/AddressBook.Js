@@ -212,4 +212,18 @@ function searchPersonAcrossState(city) {                      //Uc8
     console.log(addressBook.filter(contact=>contact.city==city));
 }
 viewPersonByCity("Nashik");
+
+function countByCity(city) {  //UC10
+    let countByCity = addressBook.filter((contact) => contact.city == city).reduce((total) => total+= 1, 0)
+    console.log(countByCity)
+    
+}
+
+function countByState(state) { //UC10
+    let countByState = addressBook.filter((contact) => contact.state == state).reduce((total) => total+=1, 0)
+    console.log(countByState);
+}
+
+countByCity("Pune");
+countByState("Maharashtra");
  
